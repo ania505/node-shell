@@ -1,14 +1,14 @@
 var fs = require('fs');
 
-const displayLs = fs.readdir('./', 'utf8', (err, files) => {
+const displayLs = () => {fs.readdir('./', 'utf8', (err, files) => {
     if (err) {
         throw err;
     }
     else {
-        process.stdout.write(files.join('\n'));
-        process.stdout.write("prompt > \n");
+        process.stdout.write('\n' + files.join('\n'));
+        process.stdout.write("\nprompt > ");
     }
-})
+})}
 
 
-module.exports = {displayLs};
+module.exports = displayLs;
